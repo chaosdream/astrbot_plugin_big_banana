@@ -225,7 +225,7 @@
             },
             "openai_size": {
               "type": "string",
-              "default": "2048*2048",
+              "default": "2048x2048",
               "description": "OpenAI Images size"
               "hint": "用于openai规范的分辨率设计"
             },
