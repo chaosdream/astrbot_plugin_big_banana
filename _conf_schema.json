@@ -223,10 +223,10 @@
                 "default": "1K",
                 "hint": "生成图片的分辨率，必须是大写的K。当前仅对Gemini规范的 gemini-3 模型有效"
             },
-            "openai_size": {
+            "size": {
               "type": "string",
               "default": "2048x2048",
-              "description": "OpenAI Images size"
+              "description": "OpenAI Images size",
               "hint": "用于openai规范的分辨率设计"
             },
             "google_search": {
