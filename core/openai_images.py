@@ -34,13 +34,16 @@ class OpenAIImagesProvider(BaseProvider):
                     params=params,
                 )
             else:
+                json_payload = {
+                    "model": provider_config.model,
+                    "prompt": params.get("prompt", "anything"),
+                }
+                if params.get("size"):
+                    json_payload["size"] = params.get("size")
                 response = await self.session.post(
                     url=self._build_api_url(provider_config.api_url, "generations"),
                     headers={**headers, "Content-Type": "application/json"},
-                    json={
-                        "model": provider_config.model,
-                        "prompt": params.get("prompt", "anything"),
-                    },
+                    json=json_payload,
                     timeout=self.def_common_config.timeout,
                     proxy=self.def_common_config.proxy,
                 )
@@ -107,6 +110,8 @@ class OpenAIImagesProvider(BaseProvider):
             "model": provider_config.model,
             "prompt": params.get("prompt", "anything"),
         }
+        if params.get("size"):
+            data["size"] = params.get("size")
         multipart = CurlMime()
         for index, (mime, b64_data) in enumerate(image_b64_list, start=1):
             file_name, image_bytes, file_mime = self._normalize_image_payload(
