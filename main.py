@@ -28,12 +28,12 @@ PARAMS_LIST = [
     "max_images",
     "refer_images",
     "image_size",
+    "size",
     "aspect_ratio",
     "google_search",
     "preset_append",
     "gather_mode",
     "providers",
-    "size",  # NEW: for OpenAI Images size, e.g. 1024*1536
 ]
 
 # 提供商配置键列表
