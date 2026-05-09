@@ -73,6 +73,8 @@ class PromptConfig:
     """引用参考图片的文件名"""
     gather_mode: bool = False
     """是否启用收集模式"""
+    size: str = "2048x2048"
+    """用于openai的size"""
 
 
 @dataclass(repr=False, slots=True)
