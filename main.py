@@ -33,6 +33,7 @@ PARAMS_LIST = [
     "preset_append",
     "gather_mode",
     "providers",
+    "size",  # NEW: for OpenAI Images size, e.g. 1024*1536
 ]
 
 # 提供商配置键列表
